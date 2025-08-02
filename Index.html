@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<HTML lang="es">
+<head>
+ <!--Definimos la codificación de caracteres -->
+	<meta charset="UTF-8" />
+	<title>Página Hola Mundo</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<!-- Incluye la hoja de estilos de Leaflet -->	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />	<style>
+  	#map{
+ 	  width: 800px;
+ 	  height: 500px;
+ 	}
+	</style>
+</head>
+<body>
+<!-- Aquí se muestra el mensaje en pantalla -->
+	<h1> Hola mapa</h1>
+<div id="map"></div>
+<!-- Incluye la librería de Leaflet -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+	var map = L.map('map').setView([19.4326, -99.133], 13);
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '© OpenStreetMap contributors' // Muestra el crédito obligatorio
+	}).addTo(map);
+	L.marker([19.4326, -99.1332]).addTo(map)
+ 	  .bindPopup('Centro de la CDMX')
+ 	  .openPopup();
+	L.marker([19.3467, -99.1617]).addTo(map)
+ 	  .bindPopup('Coyoacán');
+        L.marker([19.3600, -99.2000]).addTo(map)
+ 	  .bindPopup('Álvaro Obregón');
+        L.marker([19.3719, -99.1594]).addTo(map)
+ 	  .bindPopup('Benito Juárez');
+        L.marker([19.3646, -99.2840]).addTo(map)
+ 	  .bindPopup('Cuajimalpa de Morelos ');
+        L.marker([19.4841, -99.1841]).addTo(map)
+ 	  .bindPopup('Azcapotzalco');
+        L.marker([19.3185, -99.2323]).addTo(map)
+ 	  .bindPopup('Magdalena Contreras');
+</script>
+</body>
+</html>
